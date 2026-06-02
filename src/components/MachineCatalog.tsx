@@ -43,7 +43,7 @@ export default function MachineCatalog() {
           <div className="lg:col-span-5 relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border-4 border-white stitch-border">
               <img
-                src="/src/assets/images/sewing_machine_catalog_1780409491706.png"
+                src="/images/sewing_machine_catalog_1780409491706.png"
                 alt="Boutique Sewing Machine Assembly and threads"
                 className="w-full h-full object-cover select-none"
                 referrerPolicy="no-referrer"

@@ -75,7 +75,7 @@ export default function InstagramFeed() {
                   <div className="bg-gradient-to-tr from-yellow-500 via-pink-500 to-purple-600 p-[1.5px] rounded-full">
                     <div className="bg-white p-[1px] rounded-full">
                       <img
-                        src="/src/assets/images/bridal_blouse_aari_1780409427966.png"
+                        src="/images/bridal_blouse_aari_1780409427966.png"
                         alt="Boutique Logo Profile Mini"
                         className="w-7 h-7 rounded-full object-cover"
                         referrerPolicy="no-referrer"

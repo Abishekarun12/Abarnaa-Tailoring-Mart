@@ -27,7 +27,7 @@ export default function Hero() {
             className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-gold-300 bg-gold-50/70 text-gold-700 font-display text-xs font-semibold uppercase tracking-widest mb-6"
           >
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Madurai\'s Premier Ladies Couture</span>
+            <span>Thiruthuraipoondi's Premier Ladies Couture</span>
           </motion.div>
 
           <motion.h1
@@ -106,7 +106,7 @@ export default function Hero() {
             className="relative max-w-md w-full aspect-square border-8 border-white rounded-2xl shadow-xl overflow-hidden stitch-border"
           >
             <img
-              src="/src/assets/images/bridal_blouse_aari_1780409427966.png"
+              src="/images/bridal_blouse_aari_1780409427966.png"
               alt="Intricate Bridal Aari Embroidery Blouse"
               className="w-full h-full object-cover select-none"
               referrerPolicy="no-referrer"
