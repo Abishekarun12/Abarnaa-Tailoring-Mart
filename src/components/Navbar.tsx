@@ -27,7 +27,7 @@ export default function Navbar({
       {/* Dynamic boutique banner ticker */}
       <div className="bg-amber-800 text-stone-100 py-1.5 px-4 text-xs font-display tracking-widest text-center flex items-center justify-center gap-2 overflow-hidden whitespace-nowrap">
         <span>✨ MEENAKSHI AMMAN TEMPLE - TOWN BRANCH & BYPASS BRANCH ACTIVE ✨</span>
-        <span className="hidden md:inline">• PHONE BOOKINGS OPEN: +91 94432 77080</span>
+        <span className="hidden md:inline">• PHONE BOOKINGS OPEN: +91 73971 33105</span>
         <span className="hidden lg:inline">• PREMIUM AARI EMBROIDERY & DESIGNER STITCHING</span>
       </div>
 

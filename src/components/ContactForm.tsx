@@ -74,7 +74,7 @@ export default function ContactForm({
       console.error(err);
       setStatusMessage({
         type: 'error',
-        text: 'Failed to send email. Verify your Gmail account scopes are active, or contact us directly at +91 94432 77080.'
+        text: 'Failed to send email. Verify your Gmail account scopes are active, or contact us directly at +91 73971 33015 77080.'
       });
     } finally {
       setIsSending(false);
@@ -115,8 +115,8 @@ export default function ContactForm({
                   <Phone className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" />
                   <div>
                     <h4 className="text-xs font-display uppercase tracking-wider text-gold-300 font-bold">Stitching Lines</h4>
-                    <p className="text-sm font-sans">+91 94432 77080</p>
-                    <p className="text-[11px] text-stone-400 mt-1">Bypass machinery: +91 94432 77081</p>
+                    <p className="text-sm font-sans">+91 73971 33105</p>
+                    <p className="text-[11px] text-stone-400 mt-1">Bypass machinery: +91 73971 33105</p>
                   </div>
                 </div>
 
@@ -133,10 +133,10 @@ export default function ContactForm({
                 <div className="flex gap-4">
                   <MapPin className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-xs font-display uppercase tracking-wider text-gold-300 font-bold">Madurai Branches</h4>
+                    <h4 className="text-xs font-display uppercase tracking-wider text-gold-300 font-bold">Thiruthuraipoondi Branches</h4>
                     <p className="text-xs text-stone-300 leading-normal font-sans">
-                      Branch 1: Meenakshi Temple Town Area<br />
-                      Branch 2: Kalavasal Bypass Machinery Hub
+                      Branch 1: Abarnaa Tailoring Mart<br />
+                      Branch 2: Abi Stationery
                     </p>
                   </div>
                 </div>

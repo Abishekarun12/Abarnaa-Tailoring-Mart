@@ -19,10 +19,10 @@ export default function Footer() {
           <div className="text-center md:text-left mb-10">
             <span className="text-[10px] font-display uppercase tracking-widest text-gold-400 font-bold mb-2 block">Our Locations Area</span>
             <h3 className="font-serif text-2xl md:text-3xl font-bold text-white leading-tight">
-              Visit Our Boutique & Machinery Showrooms
+              Visit Our Boutique with Couching & Machinery Shops
             </h3>
             <p className="text-stone-400 text-xs font-sans mt-2">
-              We have two branches in Madurai. Each branch serves dedicated customer requirements.
+              We have three branches in Thiruthuraipoondi. Each branch serves dedicated customer requirements.
             </p>
           </div>
 
@@ -83,27 +83,51 @@ export default function Footer() {
         </div>
 
         {/* Outer bottom copyright deck */}
-        <div className="border-t border-stone-800 pt-8 mt-12 flex flex-col md:flex-row items-center justify-between gap-6 text-stone-400 text-xs">
-          
-          {/* Trademark block */}
-          <div className="flex items-center gap-3">
-            <div className="bg-stone-800 p-2 rounded-full text-gold-500 border border-stone-700">
-              <Scissors className="w-4 h-4" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-serif text-sm font-semibold text-white">Abarnaa Tailoring Mart</span>
-              <span className="text-[9px] font-mono tracking-widest text-gold-500 uppercase font-bold mt-0.5">ESTD 1998 • MADURAI, IND</span>
-            </div>
-          </div>
+{/* Outer bottom copyright deck */}
+<div className="border-t border-stone-800 pt-8 mt-12 flex flex-col md:flex-row items-center justify-between gap-6 text-stone-400 text-xs">
+  
+  {/* Trademark block */}
+  <div className="flex items-center gap-3">
+    <div className="bg-stone-800 p-2 rounded-full text-gold-500 border border-stone-700">
+      <Scissors className="w-4 h-4" />
+    </div>
+    <div className="flex flex-col">
+      <span className="font-serif text-sm font-semibold text-white">
+        Abarnaa Tailoring Mart
+      </span>
+      <span className="text-[9px] font-mono tracking-widest text-gold-500 uppercase font-bold mt-0.5">
+        ESTD 2015 • THIRUTHURAIPOONDI
+      </span>
+    </div>
+  </div>
 
-          <p className="text-center md:text-right text-[10.5px]">
-            &copy; {new Date().getFullYear()} Abarnaa Tailoring Mart. All rights reserved.<br />
-            <span className="text-[9.5px] text-stone-600 block mt-1">
-              Ladies Blouse Specialist & Sewing Machine Distributors | Secure Client Portal
-            </span>
-          </p>
+  {/* Developer Credit */}
+  <div className="flex items-center justify-center">
+    <a
+      href="https://abishek-portfolio.vercel.app"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex items-center gap-2 px-4 py-2 rounded-full border border-stone-700 hover:border-gold-500 transition-all duration-300 bg-stone-800/50"
+    >
+      <span className="text-stone-400 text-[11px]">
+        Made with ❤️ by
+      </span>
+      <span className="font-serif font-bold text-gold-500 group-hover:text-gold-400">
+        Ravanaa
+      </span>
+    </a>
+  </div>
 
-        </div>
+  {/* Copyright block */}
+  <p className="text-center md:text-right text-[10.5px]">
+    &copy; {new Date().getFullYear()} Abarnaa Tailoring Mart. All rights reserved.
+    <br />
+    <span className="text-[9.5px] text-stone-600 block mt-1">
+      Ladies Blouse Specialist & Sewing Machine Distributors | Secure Client Portal
+    </span>
+  </p>
+
+</div>
 
       </div>
     </footer>

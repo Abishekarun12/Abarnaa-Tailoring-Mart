@@ -88,14 +88,14 @@ export const INSTAGRAM_ITEMS: InstagramShowcaseItem[] = [
   {
     id: 'i2',
     imageUrl: '/images/designer_blouse_cutwork_1780409469229.png',
-    caption: 'Intricate cut-work designs highlighted with custom pearls. Designing dreams, one stitch at a time. Book your bridal consult today! #MaduraiMoms #BlouseInspiration',
+    caption: 'Intricate cut-work designs highlighted with custom pearls. Designing dreams, one stitch at a time. Book your bridal consult today! #TTPMoms #BlouseInspiration',
     likes: 512,
     comments: 67,
     date: '5 Days ago'
   },
   {
     id: 'i3',
-    imageUrl: '/images/bridal_blouse_aari_1780409427966.png',
+    imageUrl: '/images/aari1.png',
     caption: 'Heavy designer sleeves that make heads turn. Custom fit and tailor-stitched only for you. DM us for pricing details. #AariClass #IndianBoutique',
     likes: 219,
     comments: 18,
@@ -105,19 +105,43 @@ export const INSTAGRAM_ITEMS: InstagramShowcaseItem[] = [
 
 export const BRANCHES_DATA: BranchDetails[] = [
   {
-    city: 'Madurai - Town Main',
+    city: 'Thiruthuraipoondi - Town Main',
     name: 'Abarnaa Tailoring Mart & Designer Studio',
-    address: 'No. 42, East Avani Moola Street, Adjacent to Meenakshi Amman Temple Gate, Madurai, Tamil Nadu - 625001',
-    phone: '+91 94432 77080',
+    address: '96B, Jawulikadai Street,Vedai Road, Tamil Nadu - 625001',
+    phone: '+91 73971 33105',
     hours: 'Mon - Sat: 9:00 AM - 9:00 PM | Sun: 11:30 AM - 6:00 PM',
-    mapsUrl: 'https://maps.google.com/?q=East+Avani+Moola+Street+Madurai'
+    mapsUrl: 'https://maps.app.goo.gl/SvY3QVUXd8eyfHg27'
   },
   {
-    city: 'Madurai - Bypass Hub',
+    city: 'Thiruthuraipoondi - Town Main',
     name: 'Abarnaa Sewing machinery & Executive Fitting Center',
-    address: 'No. 115, Bypass Road, Kalavasal Junction, (Opposite to German Plaza), Madurai, Tamil Nadu - 625016',
-    phone: '+91 94432 77081',
+    address: '96B, Jawulikadai Street,Vedai Road, Tamil Nadu - 625001',
+    phone: '+91 73971 33105',
     hours: 'Mon - Sat: 9:00 AM - 8:30 PM | Sun: Closed (Fitting bookings accepted)',
-    mapsUrl: 'https://maps.google.com/?q=Kalavasal+Bypass+Road+Madurai'
+    mapsUrl: 'https://maps.app.goo.gl/SvY3QVUXd8eyfHg27'
+  },
+  {
+    city: 'Thiruthuraipoondi - Town Main',
+    name: 'Abi Stationery & Paperworks',
+    address: '96B, Jawulikadai Street,Vedai Road, Tamil Nadu - 625001',
+    phone: '+91 73971 33105',
+    hours: 'Mon - Sat: 9:00 AM - 8:30 PM | Sun: Closed (Fitting bookings accepted)',
+    mapsUrl: 'https://maps.app.goo.gl/SvY3QVUXd8eyfHg27'
+  },
+  {
+    city: 'Thiruthuraipoondi - Town Main',
+    name: 'Abarnaa Couching for Tailoring & Aari Design',
+    address: '96B, Jawulikadai Street,Vedai Road, Tamil Nadu - 625001',
+    phone: '+91 73971 33105',
+    hours: 'Mon - Sat: 9:00 AM - 8:30 PM | Sun: Closed (Fitting bookings accepted)',
+    mapsUrl: 'https://maps.app.goo.gl/SvY3QVUXd8eyfHg27'
+  },
+  {
+    city: 'Kariyappatinam - Town Main',
+    name: 'Abarnaa Sewing machinery & Aari Coching Centre',
+    address: '96B, Jawulikadai Street,Vedai Road, Tamil Nadu - 625001',
+    phone: '+91 73971 33105',
+    hours: 'Mon - Sat: 9:00 AM - 8:30 PM | Sun: Closed (Fitting bookings accepted)',
+    mapsUrl: 'https://maps.app.goo.gl/DMZjdoCBjdfmuLe3A'
   }
 ];

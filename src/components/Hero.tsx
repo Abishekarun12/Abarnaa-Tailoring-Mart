@@ -48,7 +48,7 @@ export default function Hero() {
           >
             Welcome to <strong>Abarnaa Tailoring Mart</strong>—where we turn fine fabrics into works of art. 
             We specialize in bespoke custom blouses, stunning bridal Aari work, master ladies stitching, 
-            and supply genuine high-speed sewing machines & accessories across two premium showrooms in Madurai.
+            and supply genuine high-speed sewing machines & accessories across two premium shop in Thiruthuraipoondi.
           </motion.p>
 
           <motion.div

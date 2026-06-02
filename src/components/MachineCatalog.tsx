@@ -34,7 +34,7 @@ export default function MachineCatalog() {
             </h2>
             <div className="h-[2px] w-16 bg-gold-400 mb-6"></div>
             <p className="text-stone-600 text-sm font-sans leading-relaxed max-w-xl">
-              Beyond master bridal couture, Abarnaa Tailoring Mart is Madurai's trusted partner for modern sewing machinery sales and genuine mechanical spare parts. 
+              Beyond master bridal couture, Abarnaa Tailoring Mart is Thiruthuraipoondi's trusted partner for modern sewing machinery sales and genuine mechanical spare parts. 
               We stock standard bobbins, heavy duty motors, genuine carbon hooks, and computerized automatic zig-zag machines from global giants like Usha and Singer with complete warranty coverage.
             </p>
           </div>

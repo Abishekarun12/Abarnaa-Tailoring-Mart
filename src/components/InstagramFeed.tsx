@@ -52,12 +52,12 @@ export default function InstagramFeed() {
           </div>
 
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/abarnaa.tails?igsh=bjZ5bTZ2NTJqYTM5&utm_source=qr"
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2.5 rounded-full border border-gold-300 bg-white hover:bg-gold-50/50 text-gold-800 text-xs font-display font-semibold uppercase tracking-wider flex items-center gap-1.5 transition-colors self-center shadow-sm"
           >
-            <span>Follow @abarnaatailor</span>
+            <span>Follow @abarnaa.tails</span>
             <ExternalLink className="w-3.5 h-3.5" />
           </a>
         </div>
@@ -75,7 +75,7 @@ export default function InstagramFeed() {
                   <div className="bg-gradient-to-tr from-yellow-500 via-pink-500 to-purple-600 p-[1.5px] rounded-full">
                     <div className="bg-white p-[1px] rounded-full">
                       <img
-                        src="/images/bridal_blouse_aari_1780409427966.png"
+                        src="/images/logo.png"
                         alt="Boutique Logo Profile Mini"
                         className="w-7 h-7 rounded-full object-cover"
                         referrerPolicy="no-referrer"
@@ -83,8 +83,8 @@ export default function InstagramFeed() {
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-xs font-display font-extrabold text-stone-800">abarnaatailoringmart</h4>
-                    <p className="text-[9px] text-stone-400 font-sans">Town Hall Main, Madurai</p>
+                    <h4 className="text-xs font-display font-extrabold text-stone-800">abarnaa_tailoring_mart</h4>
+                    <p className="text-[9px] text-stone-400 font-sans">Vedai Road, Thiruthuraipoondi</p>
                   </div>
                 </div>
 
@@ -142,7 +142,7 @@ export default function InstagramFeed() {
                   </p>
 
                   <p className="text-xs text-stone-600 font-sans leading-relaxed line-clamp-3">
-                    <span className="font-display font-extrabold text-stone-800 mr-1.5">abarnaatailoringmart</span>
+                    <span className="font-display font-extrabold text-stone-800 mr-1.5">abarnaa_tailoring_mart</span>
                     {item.caption}
                   </p>
                 </div>
