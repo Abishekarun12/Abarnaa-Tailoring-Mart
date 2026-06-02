@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@300..700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-gold-50: #fdfbf7;
+  --color-gold-100: #fbf5e6;
+  --color-gold-200: #f5e6c4;
+  --color-gold-300: #ecd29b;
+  --color-gold-400: #e0b66b;
+  --color-gold-500: #d49842;
+  --color-gold-600: #bc7c31;
+  --color-gold-700: #9c5f25;
+  --color-gold-800: #7d491f;
+  --color-gold-900: #663a1b;
+}
+
+/* Elegant scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fafaf9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ecd29b;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d49842;
+}
+
+/* Material Design Sign in button styles as requested by OAuth skill */
+.gsi-material-button {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-appearance: none;
+  background-color: WHITE;
+  background-image: none;
+  border: 1px solid #747775;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #1f1f1f;
+  cursor: pointer;
+  font-family: 'Inter', arial, sans-serif;
+  font-size: 14px;
+  height: 40px;
+  letter-spacing: 0.25px;
+  outline: none;
+  overflow: hidden;
+  padding: 0 12px;
+  position: relative;
+  text-align: center;
+  -webkit-transition: background-color .15s, border-color .15s, box-shadow .15s, -webkit-box-shadow .15s;
+  transition: background-color .15s, border-color .15s, box-shadow .15s, -webkit-box-shadow .15s;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: auto;
+  min-width: min-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gsi-material-button .gsi-material-button-icon {
+  height: 20px;
+  min-width: 20px;
+  width: 20px;
+  margin-right: 12px;
+}
+
+.gsi-material-button .gsi-material-button-content-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 100%;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.gsi-material-button .gsi-material-button-contents {
+  flex-grow: 1;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: top;
+}
+
+.gsi-material-button:hover {
+  background-color: #f2f2f2;
+  border-color: #747775;
+  box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
+}
+
+.gsi-material-button:focus {
+  background-color: #f2f2f2;
+  border-color: #0b57d0;
+  outline: none;
+}
+
+/* Elegant tailoring dotted patterns & lines */
+.tailor-pattern {
+  background-image: radial-gradient(#d49842 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.08;
+}
+
+.stitch-border {
+  border-style: dashed;
+  border-width: 2px;
+  border-image: repeating-linear-gradient(45deg, #d49842, #d49842 8px, transparent 8px, transparent 16px) 1;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #d49842 0%, #9c5f25 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Abarnaa Tailoring Mart",
+  "description": "A premium ladies tailoring boutique specializing in custom blouse stitching, Aari work, and sewing machine sales, integrated with Google Calendar to manage fittings and Google Drive for design assets.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
