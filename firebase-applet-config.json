@@ -1,9 +1,10 @@
 {
-  "projectId": "euphoric-chalice-c1b2m",
-  "appId": "1:722867474611:web:b23304a184a909149aa0c6",
-  "apiKey": "AIzaSyDqH81RHP38Et-VYah0kCGyYnZPzRetYxw",
-  "authDomain": "euphoric-chalice-c1b2m.firebaseapp.com",
-  "storageBucket": "euphoric-chalice-c1b2m.firebasestorage.app",
-  "messagingSenderId": "722867474611",
-  "measurementId": ""
+  "apiKey": "AIzaSyDaYbR6iWW0yy0AMaUGucW5L1yct_VnL_M",
+  "authDomain": "abarnaa-tailoring-mart.firebaseapp.com",
+  "projectId": "abarnaa-tailoring-mart",
+  "storageBucket": "abarnaa-tailoring-mart.firebasestorage.app",
+  "messagingSenderId": "300114813719",
+  "appId": "1:300114813719:web:24d92b5ac220a54db08d52",
+  "measurementId": "G-69ZQ4LM6VN"
 }
+
