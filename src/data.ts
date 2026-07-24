@@ -131,7 +131,7 @@ export const BRANCHES_DATA: BranchDetails[] = [
   {
     city: 'Thiruthuraipoondi - Town Main',
     name: 'Abarnaa Couching for Tailoring & Aari Design',
-    address: '96B, Jawulikadai Street,Vedai Road, Tamil Nadu - 625001',
+    address: 'Samiyappa nagar, Thiruthuraipoondi, Tamil Nadu - 625001',
     phone: '+91 73971 33105',
     hours: 'Mon - Sat: 9:00 AM - 8:30 PM | Sun: Closed (Fitting bookings accepted)',
     mapsUrl: 'https://maps.app.goo.gl/SvY3QVUXd8eyfHg27'
@@ -139,7 +139,7 @@ export const BRANCHES_DATA: BranchDetails[] = [
   {
     city: 'Kariyappatinam - Town Main',
     name: 'Abarnaa Sewing machinery & Aari Coching Centre',
-    address: '96B, Jawulikadai Street,Vedai Road, Tamil Nadu - 625001',
+    address: 'Kariyapattinam, Tamil Nadu - 625001',
     phone: '+91 73971 33105',
     hours: 'Mon - Sat: 9:00 AM - 8:30 PM | Sun: Closed (Fitting bookings accepted)',
     mapsUrl: 'https://maps.app.goo.gl/DMZjdoCBjdfmuLe3A'

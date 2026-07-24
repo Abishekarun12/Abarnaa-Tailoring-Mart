@@ -4,8 +4,9 @@
  */
 
 import React from 'react';
-import { MapPin, Phone, Clock, Compass, Grid, Laptop, Scissors } from 'lucide-react';
+import { MapPin, Phone, Clock, Compass } from 'lucide-react';
 import { BRANCHES_DATA } from '../data';
+import ScrollReveal from './ScrollReveal';
 
 export default function Footer() {
   return (
@@ -26,7 +27,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <ScrollReveal stagger className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {BRANCHES_DATA.map((branch, index) => (
               <div
                 key={index}
@@ -79,7 +80,7 @@ export default function Footer() {
                 </div>
               </div>
             ))}
-          </div>
+          </ScrollReveal>
         </div>
 
         {/* Outer bottom copyright deck */}
@@ -88,8 +89,13 @@ export default function Footer() {
   
   {/* Trademark block */}
   <div className="flex items-center gap-3">
-    <div className="bg-stone-800 p-2 rounded-full text-gold-500 border border-stone-700">
-      <Scissors className="w-4 h-4" />
+    <div className="w-9 h-9 rounded-full border border-gold-700/60 overflow-hidden shrink-0">
+      <img
+        src="/images/logo.png"
+        alt="Abarnaa Tailoring Mart Logo"
+        className="w-full h-full object-cover"
+        referrerPolicy="no-referrer"
+      />
     </div>
     <div className="flex flex-col">
       <span className="font-serif text-sm font-semibold text-white">

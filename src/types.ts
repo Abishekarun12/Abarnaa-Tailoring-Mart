@@ -3,22 +3,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export interface UserInfo {
-  uid: string;
-  displayName: string | null;
-  email: string | null;
-  photoURL: string | null;
-}
-
-export interface DriveFileItem {
-  id: string;
-  name: string;
-  mimeType: string;
-  thumbnailLink?: string;
-  webContentLink?: string;
-  webViewLink?: string;
-}
-
 export interface BookingDetails {
   id?: string;
   name: string;

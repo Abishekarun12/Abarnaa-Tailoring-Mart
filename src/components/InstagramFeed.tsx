@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Heart, MessageCircle, Instagram, ExternalLink, Sparkles } from 'lucide-react';
 import { INSTAGRAM_ITEMS } from '../data';
+import ScrollReveal from './ScrollReveal';
 
 export default function InstagramFeed() {
   // Simple local state to simulate double tap liking for interactive luxury
@@ -42,7 +43,7 @@ export default function InstagramFeed() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Gallery Segment Heading */}
-        <div className="flex flex-col sm:flex-row items-center sm:items-stretch sm:justify-between mb-12 gap-4">
+        <ScrollReveal className="flex flex-col sm:flex-row items-center sm:items-stretch sm:justify-between mb-12 gap-4">
           <div className="text-center sm:text-left">
             <span className="text-[11px] font-display uppercase tracking-widest text-gold-600 font-bold mb-1.5 block">Instagram Showcase</span>
             <h2 className="font-serif text-2xl md:text-3xl font-bold text-stone-900 flex items-center gap-2 justify-center sm:justify-start">
@@ -60,10 +61,10 @@ export default function InstagramFeed() {
             <span>Follow @abarnaa.tails</span>
             <ExternalLink className="w-3.5 h-3.5" />
           </a>
-        </div>
+        </ScrollReveal>
 
         {/* Showcase Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <ScrollReveal stagger className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {INSTAGRAM_ITEMS.map((item) => (
             <div
               key={item.id}
@@ -132,7 +133,7 @@ export default function InstagramFeed() {
                     >
                       <Heart className={`w-5 h-5 ${likes[item.id].liked ? 'text-red-500 fill-red-500' : 'text-stone-700 hover:text-red-500'}`} />
                     </button>
-                    <button className="text-stone-700 hover:text-amber-800 transition-colors">
+                    <button className="text-stone-700 hover:text-maroon-800 transition-colors">
                       <MessageCircle className="w-5 h-5" />
                     </button>
                   </div>
@@ -153,7 +154,7 @@ export default function InstagramFeed() {
               </div>
             </div>
           ))}
-        </div>
+        </ScrollReveal>
 
       </div>
     </section>

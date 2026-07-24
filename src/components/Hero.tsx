@@ -3,16 +3,49 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'motion/react';
 import { Sparkles, Calendar, ArrowDown, ShieldCheck } from 'lucide-react';
+import ThreeHeroScene from './ThreeHeroScene';
+import { prefersReducedMotion } from '../lib/gsap';
 
 export default function Hero() {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const glowRef = useRef<HTMLDivElement>(null);
+
+  const handleCardMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const card = cardRef.current;
+    const glow = glowRef.current;
+    if (!card || prefersReducedMotion()) return;
+
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const rotateY = ((x / rect.width) - 0.5) * 14;
+    const rotateX = (0.5 - y / rect.height) * 14;
+
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    if (glow) {
+      glow.style.opacity = '1';
+      glow.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(224,182,107,0.4), transparent 55%)`;
+    }
+  };
+
+  const handleCardMouseLeave = () => {
+    const card = cardRef.current;
+    const glow = glowRef.current;
+    if (card) card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    if (glow) glow.style.opacity = '0';
+  };
+
   return (
     <section id="home" className="relative bg-stone-100 overflow-hidden py-16 md:py-24">
       {/* Delicate background sewing line patterns */}
       <div className="absolute inset-0 tailor-pattern" />
-      
+
+      {/* Animated 3D silk & gold-thread backdrop */}
+      <ThreeHeroScene className="absolute inset-0 opacity-60 pointer-events-none" />
+
       {/* Decorative vertical satin strips */}
       <div className="absolute top-0 right-10 w-[1px] h-full bg-gold-300 hidden md:block" />
       <div className="absolute top-0 right-20 w-[1px] h-full bg-gold-200 hidden md:block" />
@@ -59,7 +92,7 @@ export default function Hero() {
           >
             <a
               href="#calendar"
-              className="px-6 py-3.5 rounded-full bg-amber-800 text-stone-50 font-display font-medium text-xs uppercase tracking-widest hover:bg-amber-900 transition-all flex items-center justify-center gap-2 shadow-md hover:-translate-y-0.5 active:translate-y-0"
+              className="px-6 py-3.5 rounded-full bg-maroon-800 text-stone-50 font-display font-medium text-xs uppercase tracking-widest hover:bg-maroon-900 transition-all flex items-center justify-center gap-2 shadow-md hover:-translate-y-0.5 active:translate-y-0"
             >
               <Calendar className="w-4 h-4" />
               Book Fitting Session
@@ -98,12 +131,15 @@ export default function Hero() {
         </div>
 
         {/* Hero Visual Image Display */}
-        <div className="lg:col-span-5 relative w-full flex justify-center">
+        <div className="lg:col-span-5 relative w-full flex justify-center" style={{ perspective: '1000px' }}>
           <motion.div
+            ref={cardRef}
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="relative max-w-md w-full aspect-square border-8 border-white rounded-2xl shadow-xl overflow-hidden stitch-border"
+            onMouseMove={handleCardMouseMove}
+            onMouseLeave={handleCardMouseLeave}
+            className="relative max-w-md w-full aspect-square border-8 border-white rounded-2xl shadow-xl overflow-hidden stitch-border transition-transform duration-200 ease-out will-change-transform"
           >
             <img
               src="/images/bridal_blouse_aari_1780409427966.png"
@@ -111,7 +147,13 @@ export default function Hero() {
               className="w-full h-full object-cover select-none"
               referrerPolicy="no-referrer"
             />
-            
+
+            {/* Cursor-tracking gold spotlight */}
+            <div
+              ref={glowRef}
+              className="absolute inset-0 opacity-0 transition-opacity duration-300 pointer-events-none mix-blend-overlay"
+            />
+
             {/* Elegant overlay badge */}
             <div className="absolute bottom-6 left-6 right-6 bg-stone-50/90 backdrop-blur-sm border border-gold-300 p-4 rounded-xl flex items-center justify-between">
               <div>
