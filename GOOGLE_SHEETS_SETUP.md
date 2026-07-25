@@ -62,7 +62,7 @@ function doPost(e) {
 1. Open `.env` in the project root.
 2. Set:
    ```
-   VITE_SHEETS_WEBAPP_URL="https://script.google.com/macros/s/AKfycb.../exec"
+   NEXT_PUBLIC_SHEETS_WEBAPP_URL="https://script.google.com/macros/s/AKfycb.../exec"
    ```
 3. Restart `npm run dev` (env vars are only read at server start).
 

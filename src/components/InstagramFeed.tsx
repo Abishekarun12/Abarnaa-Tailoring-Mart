@@ -1,23 +1,47 @@
+'use client';
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Heart, MessageCircle, Instagram, ExternalLink, Sparkles } from 'lucide-react';
 import { INSTAGRAM_ITEMS } from '../data';
+import { InstagramShowcaseItem } from '../types';
+import { getInstagramItems } from '../services/sanityApi';
 import ScrollReveal from './ScrollReveal';
 
-export default function InstagramFeed() {
-  // Simple local state to simulate double tap liking for interactive luxury
-  const [likes, setLikes] = useState<Record<string, { count: number; liked: boolean }>>(() => {
-    const initial: Record<string, { count: number; liked: boolean }> = {};
-    INSTAGRAM_ITEMS.forEach((item) => {
-      initial[item.id] = { count: item.likes, liked: false };
-    });
-    return initial;
+function buildLikesState(items: InstagramShowcaseItem[]): Record<string, { count: number; liked: boolean }> {
+  const initial: Record<string, { count: number; liked: boolean }> = {};
+  items.forEach((item) => {
+    initial[item.id] = { count: item.likes, liked: false };
   });
+  return initial;
+}
+
+export default function InstagramFeed() {
+  // Posts come from Sanity; INSTAGRAM_ITEMS renders immediately while that loads.
+  const [items, setItems] = useState<InstagramShowcaseItem[]>(INSTAGRAM_ITEMS);
+
+  // Simple local state to simulate double tap liking for interactive luxury
+  const [likes, setLikes] = useState<Record<string, { count: number; liked: boolean }>>(() =>
+    buildLikesState(INSTAGRAM_ITEMS)
+  );
+
+  useEffect(() => {
+    let cancelled = false;
+    getInstagramItems().then((data) => {
+      if (!cancelled && data.length > 0) {
+        setItems(data);
+        setLikes(buildLikesState(data));
+      }
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const handleLikeToggle = (itemId: string) => {
     setLikes((prev) => {
@@ -65,7 +89,7 @@ export default function InstagramFeed() {
 
         {/* Showcase Grid */}
         <ScrollReveal stagger className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {INSTAGRAM_ITEMS.map((item) => (
+          {items.map((item) => (
             <div
               key={item.id}
               className="bg-white rounded-3xl overflow-hidden border border-gold-200/60 shadow-md group flex flex-col justify-between"

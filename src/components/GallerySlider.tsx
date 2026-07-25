@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -6,20 +8,35 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { DEFAULT_BLOUSES } from '../data';
+import { StaticBlouse, DEFAULT_BLOUSES } from '../data';
+import { getBlouses } from '../services/sanityApi';
 import ScrollReveal from './ScrollReveal';
 
 export default function GallerySlider() {
-  // Built-in showcase auto-scrolling sliders
+  // Blouses come from Sanity; DEFAULT_BLOUSES renders immediately while that loads.
+  const [blouses, setBlouses] = useState<StaticBlouse[]>(DEFAULT_BLOUSES);
   const [activeIndex, setActiveIndex] = useState(0);
   const autoPlayRef = useRef<(() => void) | null>(null);
 
-  // Manage auto-scrolling interval for built-in blouses
+  useEffect(() => {
+    let cancelled = false;
+    getBlouses().then((data) => {
+      if (!cancelled && data.length > 0) {
+        setBlouses(data);
+        setActiveIndex(0);
+      }
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  // Manage auto-scrolling interval for the blouse showcase
   const nextSlide = () => {
-    setActiveIndex((prev) => (prev === DEFAULT_BLOUSES.length - 1 ? 0 : prev + 1));
+    setActiveIndex((prev) => (prev === blouses.length - 1 ? 0 : prev + 1));
   };
   const prevSlide = () => {
-    setActiveIndex((prev) => (prev === 0 ? DEFAULT_BLOUSES.length - 1 : prev - 1));
+    setActiveIndex((prev) => (prev === 0 ? blouses.length - 1 : prev - 1));
   };
 
   autoPlayRef.current = nextSlide;
@@ -57,8 +74,8 @@ export default function GallerySlider() {
               <AnimatePresence mode="wait">
                 <motion.img
                   key={activeIndex}
-                  src={DEFAULT_BLOUSES[activeIndex].imageUrl}
-                  alt={DEFAULT_BLOUSES[activeIndex].name}
+                  src={blouses[activeIndex].imageUrl}
+                  alt={blouses[activeIndex].name}
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
@@ -84,26 +101,26 @@ export default function GallerySlider() {
 
               {/* Floating index indicator */}
               <div className="absolute bottom-4 left-4 bg-stone-900/40 backdrop-blur-sm text-stone-50 px-3 py-1 rounded-full text-[10px] font-mono font-bold tracking-wider">
-                {activeIndex + 1} / {DEFAULT_BLOUSES.length}
+                {activeIndex + 1} / {blouses.length}
               </div>
             </div>
 
             {/* Spec details specs side */}
             <div className="md:col-span-6 p-6 md:p-10 flex flex-col justify-center bg-stone-50">
               <span className="text-[10px] font-display tracking-widest text-gold-600 uppercase font-bold mb-1.5 block">
-                {DEFAULT_BLOUSES[activeIndex].collection}
+                {blouses[activeIndex].collection}
               </span>
               <h3 className="font-serif text-2xl font-bold text-stone-900 mb-4 tracking-tight">
-                {DEFAULT_BLOUSES[activeIndex].name}
+                {blouses[activeIndex].name}
               </h3>
               <p className="text-stone-600 text-sm leading-relaxed mb-6">
-                {DEFAULT_BLOUSES[activeIndex].description}
+                {blouses[activeIndex].description}
               </p>
 
               <div>
                 <h4 className="text-[11px] font-display uppercase tracking-wider text-stone-400 font-bold mb-3">Stitching Specs & Fabric</h4>
                 <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
-                  {DEFAULT_BLOUSES[activeIndex].specs.map((spec, i) => (
+                  {blouses[activeIndex].specs.map((spec, i) => (
                     <li key={i} className="text-xs text-stone-700 flex items-center gap-1.5 font-display font-medium">
                       <span className="w-1.5 h-1.5 rounded-full bg-gold-400"></span>
                       {spec}

@@ -1,14 +1,31 @@
+'use client';
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { MapPin, Phone, Clock, Compass } from 'lucide-react';
 import { BRANCHES_DATA } from '../data';
+import { BranchDetails } from '../types';
+import { getBranches } from '../services/sanityApi';
 import ScrollReveal from './ScrollReveal';
 
 export default function Footer() {
+  // Branches come from Sanity; BRANCHES_DATA renders immediately while that loads.
+  const [branches, setBranches] = useState<BranchDetails[]>(BRANCHES_DATA);
+
+  useEffect(() => {
+    let cancelled = false;
+    getBranches().then((data) => {
+      if (!cancelled && data.length > 0) setBranches(data);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   return (
     <footer id="branches" className="bg-stone-900 text-stone-300 pt-16 pb-8 border-t-4 border-gold-500">
       <div className="absolute inset-0 tailor-pattern opacity-5 pointer-events-none" />
@@ -28,7 +45,7 @@ export default function Footer() {
           </div>
 
           <ScrollReveal stagger className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {BRANCHES_DATA.map((branch, index) => (
+            {branches.map((branch, index) => (
               <div
                 key={index}
                 className="bg-stone-800/80 border border-gold-900/60 p-6 sm:p-8 rounded-3xl flex flex-col justify-between hover:bg-stone-800 transition-colors duration-300 relative"

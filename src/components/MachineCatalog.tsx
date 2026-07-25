@@ -1,19 +1,35 @@
+'use client';
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Settings, PenTool, CheckCircle, Tag, Sparkles } from 'lucide-react';
 import { SEWING_PRODUCTS } from '../data';
+import { SewingProduct } from '../types';
+import { getSewingProducts } from '../services/sanityApi';
 import ScrollReveal from './ScrollReveal';
 
 export default function MachineCatalog() {
+  // Products come from Sanity; SEWING_PRODUCTS renders immediately while that loads.
+  const [products, setProducts] = useState<SewingProduct[]>(SEWING_PRODUCTS);
   const [activeCategory, setActiveCategory] = useState<'all' | 'machine' | 'spare'>('all');
 
+  useEffect(() => {
+    let cancelled = false;
+    getSewingProducts().then((data) => {
+      if (!cancelled && data.length > 0) setProducts(data);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   // Filtered lists logic
-  const filteredProducts = SEWING_PRODUCTS.filter((prod) => {
+  const filteredProducts = products.filter((prod) => {
     if (activeCategory === 'all') return true;
     return prod.type === activeCategory;
   });

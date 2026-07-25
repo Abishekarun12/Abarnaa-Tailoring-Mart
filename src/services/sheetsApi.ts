@@ -11,7 +11,7 @@
  * See GOOGLE_SHEETS_SETUP.md for how to create and deploy the script.
  */
 
-const SHEETS_WEBAPP_URL = import.meta.env.VITE_SHEETS_WEBAPP_URL as string | undefined;
+const SHEETS_WEBAPP_URL = process.env.NEXT_PUBLIC_SHEETS_WEBAPP_URL;
 
 export type SheetFormType = 'Contact Inquiry' | 'Fitting Booking';
 
@@ -21,7 +21,7 @@ export async function submitToSheet(
 ): Promise<void> {
   if (!SHEETS_WEBAPP_URL) {
     throw new Error(
-      'Google Sheet connection is not configured yet. Set VITE_SHEETS_WEBAPP_URL in your .env file (see GOOGLE_SHEETS_SETUP.md).'
+      'Google Sheet connection is not configured yet. Set NEXT_PUBLIC_SHEETS_WEBAPP_URL in your .env file (see GOOGLE_SHEETS_SETUP.md).'
     );
   }
 
