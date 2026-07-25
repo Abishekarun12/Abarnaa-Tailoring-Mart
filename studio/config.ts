@@ -27,14 +27,46 @@ function cleanEnvValue(value: string | undefined): string | undefined {
   return trimmed || undefined;
 }
 
-const projectId =
-  cleanEnvValue(process.env.SANITY_STUDIO_PROJECT_ID) ||
-  cleanEnvValue(process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) ||
-  'x2z5b5vj';
-const dataset =
-  cleanEnvValue(process.env.SANITY_STUDIO_DATASET) ||
-  cleanEnvValue(process.env.NEXT_PUBLIC_SANITY_DATASET) ||
-  'production';
+// Sanity's own client only validates these formats lazily, deep inside the
+// Studio's browser runtime (long after `defineConfig` has already accepted
+// them) — so an invalid value doesn't fail until an editor is actually using
+// the Studio. Validating here means we always hand Sanity something valid,
+// falling back to the known-good hardcoded values instead.
+const PROJECT_ID_PATTERN = /^[a-z0-9-]+$/;
+const DATASET_PATTERN = /^[a-z0-9_-]+$/;
+
+function resolveEnvValue(
+  pattern: RegExp,
+  label: string,
+  fallback: string,
+  ...candidates: (string | undefined)[]
+): string {
+  for (const candidate of candidates) {
+    const cleaned = cleanEnvValue(candidate);
+    if (cleaned && pattern.test(cleaned)) return cleaned;
+    if (cleaned) {
+      console.warn(
+        `[Sanity Studio] Ignoring invalid ${label} "${cleaned}" — check for stray quotes or whitespace in the env var.`
+      );
+    }
+  }
+  return fallback;
+}
+
+const projectId = resolveEnvValue(
+  PROJECT_ID_PATTERN,
+  'project ID',
+  'x2z5b5vj',
+  process.env.SANITY_STUDIO_PROJECT_ID,
+  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
+);
+const dataset = resolveEnvValue(
+  DATASET_PATTERN,
+  'dataset name',
+  'production',
+  process.env.SANITY_STUDIO_DATASET,
+  process.env.NEXT_PUBLIC_SANITY_DATASET
+);
 
 export function createStudioConfig(basePath = '/') {
   try {
