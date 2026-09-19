@@ -67,3 +67,47 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* Stitching guide illustration animations */
+@keyframes stitch-run {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+.stitch-dash {
+  animation: stitch-run 1.2s linear infinite;
+}
+
+@keyframes scissor-snip {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-14deg); }
+}
+.scissor-anim {
+  animation: scissor-snip 1.4s ease-in-out infinite;
+}
+
+@keyframes steam-rise {
+  0% { opacity: 0; transform: translateY(4px); }
+  40% { opacity: 0.8; }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+.steam-anim {
+  animation: steam-rise 2s ease-in-out infinite;
+}
+
+@keyframes check-draw {
+  from { stroke-dasharray: 90; stroke-dashoffset: 90; }
+  to { stroke-dasharray: 90; stroke-dashoffset: 0; }
+}
+.check-anim {
+  animation: check-draw 0.6s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stitch-dash,
+  .scissor-anim,
+  .steam-anim,
+  .check-anim {
+    animation: none !important;
+  }
+}

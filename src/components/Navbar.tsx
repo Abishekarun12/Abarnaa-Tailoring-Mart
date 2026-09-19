@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Calendar, Phone } from 'lucide-react';
+import { Calendar, Phone, Scissors } from 'lucide-react';
 
 export default function Navbar() {
   return (
@@ -54,6 +54,12 @@ export default function Navbar() {
             </li>
             <li>
               <a href="#branches" className="hover:text-gold-600 transition-colors">Branches</a>
+            </li>
+            <li>
+              <a href="/stitching-guide" className="flex items-center gap-1 hover:text-gold-600 transition-colors">
+                <Scissors className="w-3 h-3" />
+                Learn Stitching
+              </a>
             </li>
           </ul>
 
